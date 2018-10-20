@@ -11,7 +11,9 @@
     "bundle0": "mkdir -p dist && browserify --standalone hubble --debug src/index.js > dist/bundle.js",
     "serve": "http-server .",
     "public": "copyfiles dist/bundle.js index.html public",
-    "deploy": "echo FIXME publish to gh-pages"
+    "deploy-careful": "gh-pages-deploy",
+    "deploy-help": "echo 'Warning: Deploy will destroy anything in the working copy not on origin/master...'",
+    "clean-source": "rimraf README.md src package.json"
   },
   "//": "babel-preset-es2015-script to avoid undefined (this) error in mapshaper (https://stackoverflow.com/a/34983495)",
   "devDependencies": {
@@ -25,9 +27,21 @@
     "browserify": "~16.1.1",
     "copyfiles": "^2.0.0",
     "exorcist": "~1.0.1",
+    "gh-pages-deploy": "~0.4.2",
     "http-server": "^0.11.1",
     "lodash": "~4.17.5",
     "text-encoding": "~0.6.4",
     "uglifyify": "~4.0.5"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "bundle"
+    ],
+    "commit": "Updated gh-pages deployment",
+    "post": [
+      "clean-source"
+    ],
+    "noprompt": false
   }
 }
