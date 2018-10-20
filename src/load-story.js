@@ -104,9 +104,9 @@ function parseMap(json, titleInner) {
         // console.log(link);
         const ix = aidx[link.id];
         console.log(ix);
-        if (ix) t2 += `<span><turn to="${link.id}">${ix.acronym}</turn> </span>`;
+        if (ix) t2 += `<span class="achoice"><turn to="${link.id}">${ix.acronym}</turn> </span>`;
       }
-      if (t2.length > 0) txt += `<p>${t2}</p>`
+      if (t2.length > 0) txt += `<p>You need to choose: ${t2}</p>`
     }
     if (v.image) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;

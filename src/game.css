@@ -7,3 +7,18 @@ body {
   background-color: black;
   color: white;
 }
+
+span.achoice a:visited, a:active {
+  color: white;
+}
+
+a:-webkit-any-link {
+  text-decoration: initial;
+}
+
+span.achoice a.page,a.page:visited,a.page:active,a.page:focus,a.page:visited {
+  color: yellow;
+  background-color: red !important;
+  text-decoration: none;
+  text-decoration-line: none;
+}
