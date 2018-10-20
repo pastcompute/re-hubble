@@ -415,8 +415,17 @@ var Dedalus,
      *                         to true
      */
     Dedalus.prototype.turnTo = function (target, noTurn) {
+        if (!target) {
+            console.error('Invalid page / page not found in story');
+            return;
+        }
+        var pageToPrint = this.getPage(target);
+        if (!pageToPrint) {
+            console.error('Invalid page content for ' + target);
+            return;
+        }
+
         var isNoTurn    = noTurn || false,
-            pageToPrint = this.getPage(target),
             content     = pageToPrint.content;
 
         this.executeBeforeEveryPageTurn();
