@@ -7,13 +7,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "mkdir -p dist && browserify --standalone hubble --debug src/index.js -g uglifyify -t [ babelify --global --presets [ babel-preset-es2015-script ] ] -t uglifyify | exorcist src/index.js.map > dist/bundle.js",
-    "bundle0": "mkdir -p dist && browserify --standalone hubble --debug src/index.js > dist/bundle.js",
-    "serve": "http-server .",
-    "public": "copyfiles dist/bundle.js index.html public",
+    "bundle": "mkdir -p public/lib && browserify --standalone hubble --debug src/index.js -g uglifyify -t [ babelify --global --presets [ babel-preset-es2015-script ] ] -t uglifyify | exorcist src/index.js.map > public/lib/bundle.js",
+    "bundle0": "mkdir -p public/lib && browserify --standalone hubble --debug src/index.js > public/lib/bundle.js",
+    "serve": "http-server public",
+    "demo": "npm run bundle && npm run public && opn http://localhost:8080",
+    "public": "copyfiles index.html public; copyfiles -u1 src/dedalus.js src/dedalus-web.js public/lib; copyfiles -u2 node_modules/dot/doT.min.js public/lib; copyfiles -u3 node_modules/jquery/dist/jquery.min.js public/lib",
     "deploy-careful": "gh-pages-deploy",
     "deploy-help": "echo 'Warning: Deploy will destroy anything in the working copy not on origin/master...'",
-    "clean-source": "rimraf README.md src package.json"
+    "deploy-clean-source": "rimraf src package.json public/index.html",
+    "clean-things": "rimraf public src/*.map"
   },
   "//": "babel-preset-es2015-script to avoid undefined (this) error in mapshaper (https://stackoverflow.com/a/34983495)",
   "devDependencies": {
@@ -30,17 +32,19 @@
     "gh-pages-deploy": "~0.4.2",
     "http-server": "^0.11.1",
     "lodash": "~4.17.5",
+    "opn-cli": "~3.1.0",
     "text-encoding": "~0.6.4",
     "uglifyify": "~4.0.5"
   },
   "gh-pages-deploy": {
-    "staticpath": "dist",
+    "staticpath": "public",
     "prep": [
-      "bundle"
+      "bundle",
+      "public"
     ],
     "commit": "Updated gh-pages deployment",
     "post": [
-      "clean-source"
+      "deploy-clean-source"
     ],
     "noprompt": false
   },
