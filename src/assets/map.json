@@ -1,0 +1,256 @@
+{
+  "nodes": [
+    {
+      "id": 900,
+      "type": "intro",
+      "title": "Intro title",
+      "body": [
+        "Intro body"
+      ]
+    },
+    {
+      "id": 800,
+      "type": "foyer",
+      "title": "First title",
+      "body": [
+        "You need to choose!"
+      ],
+      "image": "1.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/burst-of-celestial-fireworks",
+      "links": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "type": "death"
+    },
+    {
+      "id": 1,
+      "title": "Celestial Fireworks",
+      "acronym": "CF",
+      "image": "1.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/burst-of-celestial-fireworks",
+      "links": [
+        {
+          "id": 5
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 12
+        }
+      ],
+      "body": [
+        "You find a splash of many colours at the end of your journey. You see stars being born in this bright light. However, the mass amounts of radiation buffet and damage your ship.",
+        "From now on every time you continue on your journey there is a 5% chance radiation will destroy your ship"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Radiation",
+          "score": 10
+        },
+        {
+          "name": "Discover Major Colour",
+          "score": 2
+        },
+        {
+          "name": "Discover Star Formation",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Star Cluster",
+      "acronym": "SC",
+      "image": "2.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-spies-glittering-star-cluster-in-nearby-galaxy",
+      "links": [
+        {
+          "id": 6
+        },
+        {
+          "id": 10
+        }
+      ],
+      "body": [
+        "You arrive at a body of stars, pinpoints of white light merging spectacularly"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Minor Colour",
+          "score": 1
+        },
+        {
+          "name": "Discover Star Formation",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Threads of Blue",
+      "acronym": "ToB",
+      "image": "3.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-images-a-galaxy-with-threads-of-blue",
+      "links": [
+        {
+          "id": 5
+        },
+        {
+          "id": 11
+        }
+      ],
+      "body": [
+        "You come across a galaxy with threads of blue streaming through it like a river. You decide that you like the colour blue."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Major Colour",
+          "score": 2
+        },
+        {
+          "name": "Discover Gas",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Penguin",
+      "acronym": "PN",
+      "image": "4.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/jpl/pia22092/the-penguin-and-the-egg/",
+      "links": [
+        {
+          "id": 1
+        },
+        {
+          "id": 6
+        }
+      ],
+      "body": [
+        "You come across two galaxies that resemble a penguin and an egg. While this pleases you at first a sense of dread fills you as you remember that there are no penguins left, and that even these galaxies will eventually collide."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Animals",
+          "score": 40
+        },
+        {
+          "name": "",
+          "score": 5
+        },
+        {
+          "name": "AI Nihilistic",
+          "score": 15,
+          "attributes": "Whenever you continue your journey, 10% chance to give up and self destruct."
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Dazzling Display",
+      "acronym": "DD",
+      "image": "5.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-s-dazzling-display-of-galaxies/",
+      "links": [
+        {
+          "id": 1
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 6
+        },
+        {
+          "id": 8
+        },
+        {
+          "id": 13
+        }
+      ],
+      "body": [
+        "You arrive at the centre of a dazzling display of galaxies"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Awe",
+          "score": 15
+        },
+        {
+          "name": "Discover Minor Colour",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Aging Stars",
+      "acronym": "AS",
+      "image": "7.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-captures-cluster-of-aging-stars",
+      "links": [
+        {
+          "id": 10
+        },
+        {
+          "id": 13
+        }
+      ],
+      "body": [
+        "You arrive at a cluster of aging stars"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Enigmatic Cloud",
+      "acronym": "EC",
+      "image": "6.jpg",
+      "originalURL": "http:/blah.nasa.gov",
+      "links": [
+        {
+          "id": 91
+        },
+        {
+          "id": 8
+        },
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        },
+        {
+          "id": 2
+        }
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Remove Instant Death",
+          "main": "You see a blah blah and feel incredibly lucky"
+        }
+      ]
+    }
+  ]
+}
