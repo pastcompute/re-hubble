@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "mkdir -p public/lib && browserify --standalone hubble --debug src/index.js -g uglifyify -t [ babelify --global --presets [ babel-preset-es2015-script ] ] -t uglifyify | exorcist src/index.js.map > public/lib/bundle.js",
+    "bundle": "mkdir -p public/lib && browserify --standalone hubble --debug src/index.js -g uglifyify -t [ babelify --global --presets [ @babel/env ] ] -t uglifyify | exorcist public/lib/index.js.map > public/lib/bundle.js",
     "bundle0": "mkdir -p public/lib && browserify --standalone hubble --debug src/index.js > public/lib/bundle.js",
     "serve": "http-server public",
     "demo": "npm run bundle && npm run public && opn http://localhost:8080",
@@ -19,22 +19,20 @@
   },
   "//": "babel-preset-es2015-script to avoid undefined (this) error in mapshaper (https://stackoverflow.com/a/34983495)",
   "devDependencies": {
-    "babel-core": "~6.26.0",
-    "babel-plugin-array-includes": "~2.0.3",
-    "babel-plugin-transform-object-assign": "~6.22.0",
-    "babel-polyfill": "~6.26.0",
-    "babel-preset-env": "~1.6.1",
-    "babel-preset-es2015-script": "~1.1.0",
-    "babelify": "~7.3.0",
-    "browserify": "~16.1.1",
+    "@babel/core": "~7.1.2",
+    "@babel/preset-env": "~7.1.0",
+    "@babel/plugin-transform-object-assign": "~7.0.0",
+    "babel-plugin-transform-member-expression-literals": "~6.9.4",
+    "babelify": "10.0.0",
+    "browserify": "~16.2.3",
     "copyfiles": "^2.0.0",
     "exorcist": "~1.0.1",
     "gh-pages-deploy": "~0.4.2",
     "http-server": "^0.11.1",
     "lodash": "~4.17.5",
     "opn-cli": "~3.1.0",
-    "text-encoding": "~0.6.4",
-    "uglifyify": "~4.0.5"
+    "text-encoding": "~0.7.0",
+    "uglifyify": "~5.0.1"
   },
   "gh-pages-deploy": {
     "staticpath": "public",
@@ -48,7 +46,9 @@
     ],
     "noprompt": false
   },
+  "browserslist": "> 0.25%, Firefox ESR, not dead",
   "dependencies": {
+    "@babel/polyfill": "~7.0.0",
     "dot": "~1.1.2",
     "jquery": "~3.3.1"
   }

@@ -2,5 +2,4 @@ node_modules/
 dist/
 public/
 
-src/index.js.map
 package-lock.json
