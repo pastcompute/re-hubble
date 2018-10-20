@@ -1,22 +1,15 @@
+const StoryLoader = require('./load-story');
+
 console.log('Hello, World');
 
 $(function () {
 
-  const story = document.getElementById('story');
+  const story = StoryLoader.loadStory('story.json');
+  const container = document.getElementById('story-container');
 
-  var el;
-  
-  el = document.createElement('initscript');
-  el.innerHTML = `
-  story.messageDamage  = 0;
-  story.messageScrewed = function () { return story.messageDamage < 2; };
-  story.cloakPutOn     = false;
-  story.cloakJustPutOn = false;
-`;
+  container.appendChild(story);
 
-  story.appendChild(el);
-
-  console.log(story);
+  console.log(container);
 
 
 
