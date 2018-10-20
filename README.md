@@ -1,6 +1,6 @@
 # Introduction
 
-This is **Re:Hubble**, our entry in the [NASA Space Apps Challenge 2018](https://2018.spaceappschallenge.org). 
+This is **Re:Hubble**, our entry in the [NASA Space Apps Challenge 2018](https://2018.spaceappschallenge.org).
 
 Our entry is in the category [On the Shoulders of Giants](https://2018.spaceappschallenge.org/challenges/universe-beauty-and-wonder/shoulders-giants/details)
 
@@ -16,4 +16,4 @@ The game is setup as a github web page, head over to https://pastcompute.github.
 
 # License
 
-The underlying game engine is GPL licensed so our game is also GPL licensed.
+The underlying game engine, [Dedalus](https://github.com/pistacchio/Dedalus) is GPL licensed so therefore our game is also GPL licensed.
