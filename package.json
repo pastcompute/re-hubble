@@ -1,0 +1,33 @@
+{
+  "name": "hubble-thing",
+  "version": "0.0.1",
+  "description": "Our entry for NASA Space Apps Challenge 2018",
+  "author": "Andrew McDonnell & Zachary McDonnell",
+  "license": "MPL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "mkdir -p dist && browserify --standalone hubble --debug src/index.js -g uglifyify -t [ babelify --global --presets [ babel-preset-es2015-script ] ] -t uglifyify | exorcist src/index.js.map > dist/bundle.js",
+    "bundle0": "mkdir -p dist && browserify --standalone hubble --debug src/index.js > dist/bundle.js",
+    "serve": "http-server .",
+    "public": "copyfiles dist/bundle.js index.html public",
+    "deploy": "echo FIXME publish to gh-pages"
+  },
+  "//": "babel-preset-es2015-script to avoid undefined (this) error in mapshaper (https://stackoverflow.com/a/34983495)",
+  "devDependencies": {
+    "babel-core": "~6.26.0",
+    "babel-plugin-array-includes": "~2.0.3",
+    "babel-plugin-transform-object-assign": "~6.22.0",
+    "babel-polyfill": "~6.26.0",
+    "babel-preset-env": "~1.6.1",
+    "babel-preset-es2015-script": "~1.1.0",
+    "babelify": "~7.3.0",
+    "browserify": "~16.1.1",
+    "copyfiles": "^2.0.0",
+    "exorcist": "~1.0.1",
+    "http-server": "^0.11.1",
+    "lodash": "~4.17.5",
+    "text-encoding": "~0.6.4",
+    "uglifyify": "~4.0.5"
+  }
+}

@@ -1,0 +1,25 @@
+* text=auto
+*.ts text
+*.js text
+*.scss text
+*.css text
+*.html text
+*.md text
+*.txt text
+
+*.xml eol=lf
+*.json eol=lf
+
+*.sh text eol=lf
+*.cmd text eol=crlf
+
+*.png binary
+*.ico binary
+*.zip binary
+*.kmz binary
+*.ods binary
+
+# Package json, config xml and other files with autogeneration can cause warnings if git converts to CRLF on Windows
+package.json text eol=lf
+package-lock.json text eol=lf
+

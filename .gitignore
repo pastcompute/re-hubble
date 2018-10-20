@@ -1,0 +1,4 @@
+node_modules/
+src/index.js.map
+package-lock.json
+dist/
