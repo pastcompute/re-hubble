@@ -4,7 +4,7 @@ console.log('Hello, World');
 
 $(function () {
 
-  const story = StoryLoader.loadStory('story.json');
+  const story = StoryLoader.loadDemoStory('story.json');
   const container = document.getElementById('story-container');
 
   container.appendChild(story);
