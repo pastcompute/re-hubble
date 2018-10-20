@@ -1,8 +1,8 @@
 body {
     font-family      : Georgia, Serif;
-    font-size:       : 14px;
+    font-size        : 14px;
     color            : #3E3E3E;
-    background-image : url(background.png);
+    background-image : url(assets/background.png); /* relative to this files directory */
 }
 a {
     color: #3F3210;
