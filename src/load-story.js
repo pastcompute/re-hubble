@@ -76,44 +76,46 @@ function parseMap(json, titleInner) {
   const nodes = json.nodes;
   // console.log(nodes);
 
-  // For now, intro is type start
-  // const start1 = _.find(nodes, (o) => o.type === 'intro');
-  // if (!start1) { console.error('type=intro not found in json'); }
-  // const intro = genPage('intro', `<h1>${start1.title}</h1><p>${start1.body}</p>`);
-  // const foyer1 = _.find(nodes, (o) => o.type === 'first');
-  // if (!foyer1) { console.error('type=first not found in json'); }
-  // let hh = `<h1>${foyer1.title}</h1><p>${foyer1.body}</p>`;
-  // if (foyer1.image) {
-  //   hh += `<img class="nebula" src="assets/images/${foyer1.image}">`
-  // }
-  // const foyer = genPage('foyer', hh, 'first');
+  story.appendChild(initScript);
+  story.appendChild(title);
 
-  let intro;
+  // Build an index of the acronyms
+  const aidx = {};
+  _.each(nodes, (v, k) => { if (v.acronym) aidx[v.id] = { acronym: v.acronym }; });
+
   let first;
-  const pages = [];
   _.each(nodes, (v, k) => {
     console.log(`Node id=${v.id} type=${v.type} title=${v.title}`);
-    const txt = `<h2>${v.title}</h2><p>${v.body}</p>`
+    let txt = `<h2>${v.title}</h2><p>${v.body}</p>`
     if (v.type === 'intro') {
-      intro = genPage('intro', txt);
+      story.appendChild(genPage('intro', txt));
       return;
-    }
-    if (v.image) {
-      txt += `<img class="nebula" src="assets/images/${foyer1.image}">`;
     }
     const classes = [];
     if (!first && v.type === 'foyer') {
       classes.push('first');
       first = true;
     }
-    pages,push(genPage(v.id, txt, classes));
+    if (v.links && v.links.length > 0) {
+      // <turn to="bar" id="south">south</turn>
+      // console.log(v.links);
+      let t2 = '';
+      for (const link of v.links) {
+        // console.log(link);
+        const ix = aidx[link.id];
+        console.log(ix);
+        if (ix) t2 += `<span><turn to="${link.id}">${ix.acronym}</turn> </span>`;
+      }
+      if (t2.length > 0) txt += `<p>${t2}</p>`
+    }
+    if (v.image) {
+      txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
+    }
+    const el = genPage(v.id, txt, ...classes);
+    console.log(el);
+    story.appendChild(el);
   });
 
-
-  story.appendChild(initScript);
-  story.appendChild(title);
-  story.appendChild(intro);
-  pages.each((v) => story.appendChild(v));
   return story;
 }
 
