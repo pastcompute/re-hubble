@@ -34,7 +34,12 @@ exports.loadDemoStory = (sourceJson) => {
   );
 
   const foyer = genDemoPage('foyer',`
-    <p>You are standing in a spacious hall, splendidly decorated in red and gold, with glittering chandeliers overhead. There is an entrance from the <show paragraph="street">street</show>, and there are doorways <turn to="bar" id="south">south</turn> and <turn to="cloakroom">west</turn>.</p>
+    <p>You are standing in a spacious hall, splendidly decorated in red and gold, with glittering chandeliers overhead.
+    There is an entrance from the <show paragraph="street">street</show>,
+    and there are doorways <turn to="bar" id="south">south</turn> and <turn to="cloakroom">west</turn>.</p>
+
+    <img class="nebula" src="assets/images/12.jpg">
+
     <paragraph id="street">
         You've only just arrived, and besides, the weather outside seems to be getting worse.
     </paragraph>`, 'first'
