@@ -104,10 +104,12 @@ function parseMap(json, titleInner) {
       for (const link of v.links) {
         // console.log(link);
         const ix = aidx[link.id];
-        console.log(ix);
+        console.log(`link.id=${link.id} ix=${ix && ix.acronym}`);
         if (ix) t2 += `<button type="button" class="btn btn-outline-warning primary achoice" role="button"><turn to="${link.id}">${ix.acronym}</turn> </button>`;
       }
-      if (t2.length > 0) txt += `<p>What is your Destination? ${t2}</p>`
+      let tx2 = '';
+      if (v.type !== 'foyer' && t2.length > 0) tx2 = 'What is your Destination?';
+      if (t2.length > 0) txt += `<p>${tx2} ${t2}</p>`
     }
     if (v.image) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
