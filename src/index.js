@@ -12,6 +12,7 @@ $(function () {
   StoryLoader.loadStoryJson('Welcome to Re:Hubble', 'assets/map.json').then(story => {
     const container = document.getElementById('story-container');
     container.appendChild(story);
+
     console.log(container);
     new DedalusWeb({
         domSource         : $('#story'),

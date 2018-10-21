@@ -74,7 +74,18 @@ function parseMap(json, titleInner) {
   beforeEverything.innerHTML = `console.log(11); $('body').css('background-image', 'url(assets/images/main0.jpg)');`;
 
   const afterEveryPageTurn = document.createElement('afterEveryPageTurn');
-  afterEveryPageTurn.innerHTML = `console.log(this); if (this._story.currentPage >= 0) $('body').css('background-image', 'none');`;
+  afterEveryPageTurn.innerHTML = `
+    console.log(this);
+    if (this._story.currentPage >= 0) $('body').css('background-image', 'none');
+    const bs = document.getElementById('host').getElementsByTagName('button');
+    for (const b of bs) {
+      console.log('Add event to ', b);
+      b.addEventListener('click', (event) => { console.log(event); event.srcElement.getElementsByTagName('a')[0].click(); }, true);
+    }
+
+
+
+`;
 
   const nodes = json.nodes;
   // console.log(nodes);
@@ -122,6 +133,12 @@ function parseMap(json, titleInner) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
     }
     const el = genPage(v.id, txt, ...classes);
+    // const bs = el.getElementsByTagName('button');
+    // for (const b of bs) {
+    //   console.log('Add event to ', b);
+    //   b.addEventListener('click', (self, event) => { console.log(33); console.log(self); console.log(event); });
+    // }
+
     // console.log(el);
     story.appendChild(el);
   });
