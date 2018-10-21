@@ -70,13 +70,14 @@ function parseMap(json, titleInner) {
 
   console.log(initScript);
 
-  const title = document.createElement('title');
-  title.innerHTML = titleInner;
 
   const nodes = json.nodes;
   // console.log(nodes);
 
   story.appendChild(initScript);
+
+  const title = document.createElement('title');
+  title.innerHTML = titleInner;
   story.appendChild(title);
 
   // Build an index of the acronyms
@@ -104,9 +105,9 @@ function parseMap(json, titleInner) {
         // console.log(link);
         const ix = aidx[link.id];
         console.log(ix);
-        if (ix) t2 += `<span class="achoice"><turn to="${link.id}">${ix.acronym}</turn> </span>`;
+        if (ix) t2 += `<button type="button" class="btn btn-outline-warning primary achoice" role="button"><turn to="${link.id}">${ix.acronym}</turn> </button>`;
       }
-      if (t2.length > 0) txt += `<p>You need to choose: ${t2}</p>`
+      if (t2.length > 0) txt += `<p>Destination? ${t2}</p>`
     }
     if (v.image) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
