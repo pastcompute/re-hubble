@@ -3,6 +3,7 @@ const d3 = require('d3-fetch');
 const _ = require('lodash/core');
 
 function genPage(id, inner, ...classes) {
+  // console.log('genPage ' + id);
   const el = document.createElement('page');
   el.setAttribute('id', id);
   el.innerHTML = inner;
@@ -66,15 +67,21 @@ function parseMap(json, titleInner) {
     story.messageDamage  = 0;
     story.messageScrewed = function () { return story.messageDamage < 2; };
     story.cloakPutOn     = false;
-    story.cloakJustPutOn = false;`;
+    story.cloakJustPutOn = false;
+  `;
 
-  console.log(initScript);
+  const beforeEverything = document.createElement('beforeEveryThing');
+  beforeEverything.innerHTML = `console.log(11); $('body').css('background-image', 'url(assets/images/main0.jpg)');`;
 
+  const afterEveryPageTurn = document.createElement('afterEveryPageTurn');
+  afterEveryPageTurn.innerHTML = `console.log(this); if (this._story.currentPage >= 0) $('body').css('background-image', 'none');`;
 
   const nodes = json.nodes;
   // console.log(nodes);
 
   story.appendChild(initScript);
+  story.appendChild(beforeEverything);
+  story.appendChild(afterEveryPageTurn);
 
   const title = document.createElement('title');
   title.innerHTML = titleInner;
@@ -104,7 +111,7 @@ function parseMap(json, titleInner) {
       for (const link of v.links) {
         // console.log(link);
         const ix = aidx[link.id];
-        console.log(`link.id=${link.id} ix=${ix && ix.acronym}`);
+        // console.log(`link.id=${link.id} ix=${ix && ix.acronym}`);
         if (ix) t2 += `<button type="button" class="btn btn-outline-warning primary achoice" role="button"><turn to="${link.id}">${ix.acronym}</turn> </button>`;
       }
       let tx2 = '';
@@ -115,7 +122,7 @@ function parseMap(json, titleInner) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
     }
     const el = genPage(v.id, txt, ...classes);
-    console.log(el);
+    // console.log(el);
     story.appendChild(el);
   });
 

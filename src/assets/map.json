@@ -3,27 +3,34 @@
     {
       "id": -2,
       "type": "intro",
-  	  "title": "Earth",
-	  "body": "Hello?"
-      },
-      {
-        "id": -1,
-        "type": "foyer",
-        "title": "Earth",
-      "body": "As you begin your journey only one question remains; where will you choose to go first?",
-        "links": [
-          {
-            "id": 0
-          }
-        ]    
-      },
+      "title": "Hello World",
+      "body": [
+        "You awaken to your surroundings. You are an AI designed to discover the universe and find a new home planet for the human race."
+      ]
+    },
+    {
+      "id": -1,
+      "type": "foyer",
+      "title": "Let the journey begin!",
+      "body": [
+        "You look to the instructions your human creators left for you; You must travel around the universe discovering its wonderous secrets and find a planet for the remaining humans frozen in your ship to inhabit",
+        "You have been left image filenames from the hubble telescope to navigate with. Good Luck."
+      ],
+      "links": [
+        {
+          "id": 0
+        }
+      ]
+    },
     {
       "id": 0,
       "type": "start",
-	  "title": "Earth",
-	  "body": "As you begin your journey only one question remains; where will you choose to go first?",
-    "acronym": "Launch!",
-    "links": [
+      "title": "Earth",
+      "acronym": "Launch",
+      "body": "As you begin your journey only one question remains; where will you choose to go first?",
+      "image": "0.jpg",
+      "originalURL": "https://www.nasa.gov/centers/marshall/history/this-week-in-nasa-history-fourth-hubble-servicing-mission-launches-march-1-2002.html",
+      "links": [
         {
           "id": 1
         },
@@ -41,13 +48,13 @@
     {
       "id": 91,
       "type": "death",
-	  "title": "Cosmic Distortion",
-	  "acronym": "CD",
-	  "image": "0.jpg",
-	  "originalURL": "https://www.nasa.gov/centers/marshall/history/this-week-in-nasa-history-fourth-hubble-servicing-mission-launches-march-1-2002.html",
-	  "body": [
-	    "As you approach the cluster of galaxies in the distance you start to realise that you are being pulled off of your path - and directly into a previously unseen black hole! GAME OVER. (Crushed by Gravity)"
-	  ]
+      "title": "Cosmic Distortion",
+      "acronym": "CD",
+      "image": "x1.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-reveals-a-cosmic-distortion/",
+      "body": [
+        "As you approach the cluster of galaxies in the distance you start to realise that you are being pulled off of your path - and directly into a previously unseen black hole! GAME OVER. (Crushed by Gravity)"
+      ]
     },
     {
       "id": 1,
@@ -230,199 +237,296 @@
           "name": "Discover Death",
           "score": 10
         },
-		{
-		  "name": "Discover Minor Colour",
-		  "score": 1
-		}
+        {
+          "name": "Discover Minor Colour",
+          "score": 1
+        }
       ]
     },
-	{
-	  "id": "8",
-	  "title": "Big Sister",
-	  "acronym": "BS",
-	  "image": "8.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-images-milky-way-s-big-sister",
-	  "links": [
-	    {"id": 9},
-		{"id": 5},
-		{"id": 6},
-	    {"id": 11}
-	  ],
-	  "body": [
-	    "You arrive at a familiar looking galaxy... just.. bigger. You feel warm inside. Could this be... love?"
-		],
-	  "arrivalEvents"  :[
-	  {
-	    "name": "Discover Awe", "score": 20 },
-		{"name": "Discover Love", "score": 20 },
-		{"name": "Discover Habitable Planet 2", "score": 50 }
-
-	  ]
-	}, {
-	  "id": "9",
-	  "title": "Celestial Eye",
-	  "acronym": "CE",
-	  "image": "9.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/a-piercing-celestial-eye-stares-back-at-hubble",
-	  "links": [
-	    {"id": 8},
-		{"id": 10},
-		{"id": 11},
-		{"id": 91}
-	  ],
-	  "body": [
-	    "You arrive at a glittering celestial eye. You watch as this menacing figure births planets in front of you."
-		],
-	  "arrivalEvents"  :[
-	  {
-	    "name": "Discover Planet Formation", "score": 20 },
-		{"name": "Discover Major Colour", "score": 2 },
-		{"name": "Discover Gas", "score": 10 }
-
-	  ]
-	}, {
-	  "id": "10",
-	  "title": "Treasure Chest",
-	  "acronym": "TC",
-	  "image": "10.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-treasure-chest-of-galaxies/",
-	  "links": [
-	    {"id": 2},
-		{"id": 7},
-		{"id": 11},
-		{"id": 12},
-		{"id": 13},
-		{"id": 93}
-	  ],
-	  "body": [
-	    "You arrive among a large cluster of galaxies. Floating around you are many homeless asteroids and planets, rich in resources fit for refueling your ship."
-		],
-	  "arrivalEvents" : [
-	  {
-	    "name": "Discover Habitable Planet 1", "score": 10 },
-		{"name": "Refuel", "score": 0
-	  }
-	  ]
-	},{
-	  "id": "11",
-	  "title": "Cosmic Arc",
-	  "acronym": "CA",
-	  "image": "11.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-spots-a-green-cosmic-arc/",
-	  "links": [
-	    {"id": 8},
-		{"id": 10}
-	  ],
-	  "body": [
-	    "You arrive at cosmic arc."
-		],
-	  "arrivalEvents"  :[
-	  {
-	    "name": "Discover Galaxy Formation", "score": 10 },
-		{"name": "Discover Minor Colour", "score": 1 }
-
-	  ]
-	},{
-	  "id": "12",
-	  "title": "Cluster Cornucopia",
-	  "acronym": "CC",
-	  "image": "12.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-galaxy-cluster-cornucopia",
-	  "links": [
-	    {"id": 1},
-		{"id": 10},
-		{"id": 14},
-		{"id": 92}
-	  ],
-	  "body": [
-	    "You arrive in the centre of what can only be described as a cluster of clusters. Among them your ship sensors pick up what seems to be a planet incredibly similar to Earth."
-		],
-	  "arrivalEvents"  :[
-
-	   {"name": "Discover Habitable Planet 3", "score": 50 }
-
-	  ]
-	},{
-	  "id": "13",
-	  "title": "Homeless Stars",
-	  "acronym": "HS",
-	  "image": "13.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-captures-cluster-of-galaxies-and-homeless-stars/",
-	  "links": [
-	    {"id": 5},
-		{"id": 7},
-		{"id": 10},
-		{"id": 12}
-	  ],
-	  "body": [
-	    "You arrive among a group of homeless stars. You begin to feel depressed as this reminds you of suffering that must have permeated throughout Earth"
-		],
-	  "arrivalEvents"  :[
-	  {
-	    "name": "AI Nihilistic", "score": 15, "attributes": "Whenever you continue your journey, 10% chance to give up and self destruct." }
-
-	  ]
-	},{
-	  "id": "14",
-	  "title": "Galaxy in Disguise",
-	  "acronym": "GD",
-	  "image": "14.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-catches-a-spiral-galaxy-in-disguise",
-	  "links": [
-	    {"id": 2}
-	  ],
-	  "body": [
-	    "A galaxy appears in front of you."
-		],
-	  "arrivalEvents"  :[
-
-	{    "name": "Stealth 100", "score": 40 }
-
-	  ]
-	},{
-	  "id": "92",
-	  "title": "Distant Past",
-	  "acronym": "DP",
-	  "image": "x2.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-probes-the-distant-past",
-	  "links": [
-	    {"id": 92}
-    ],
-	  "body": [
-	    "You continue your journey."
-		]
-	},{
-	  "id": "93",
-	  "type": "Death",
-	  "title": "Irregular Supernova",
-	  "acronym": "IS",
-	  "image": "x3.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-observes-an-irregular-galaxy-with-a-peculiar-supernova",
-	  "body": [
-	    "Your ship overheats as you travel into the path of a dying star. GAME OVER. (You overheated)"
-		]
-	},
-	{
-	  "id": 6,
-	  "title": "Enigmatic Cloud",
-	  "acronym": "EC",
-	  "image": "6.jpg",
-	  "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-lucky-observation-of-an-enigmatic-cloud/",
-	  "body":
-	  [ "As you come across a beautiful cloud among sparkling stars, you feel incredibly lucky, and all your troubles seem to melt away"
-	  ],
-	  "links": [
-	    { "id": 91 },
-	    { "id": 8 },
-	    { "id": 4 },
-	    { "id": 5 },
-		{ "id": 2 }
-	  ],
-	  "arrivalEvents": [
-	  {
-		"name": "Remove Instant Death", "score": 5
-	  }
-	  ]
-	}
-	]
+    {
+      "id": "8",
+      "title": "Big Sister",
+      "acronym": "BS",
+      "image": "8.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-images-milky-way-s-big-sister",
+      "links": [
+        {
+          "id": 9
+        },
+        {
+          "id": 5
+        },
+        {
+          "id": 6
+        },
+        {
+          "id": 11
+        }
+      ],
+      "body": [
+        "You arrive at a familiar looking galaxy... just.. bigger. You feel warm inside. Could this be... love?"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Awe",
+          "score": 20
+        },
+        {
+          "name": "Discover Love",
+          "score": 20
+        },
+        {
+          "name": "Discover Habitable Planet 2",
+          "score": 50
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Celestial Eye",
+      "acronym": "CE",
+      "image": "9.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/a-piercing-celestial-eye-stares-back-at-hubble",
+      "links": [
+        {
+          "id": 8
+        },
+        {
+          "id": 10
+        },
+        {
+          "id": 11
+        },
+        {
+          "id": 91
+        }
+      ],
+      "body": [
+        "You arrive at a glittering celestial eye. You watch as this menacing figure births planets in front of you."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Planet Formation",
+          "score": 20
+        },
+        {
+          "name": "Discover Major Colour",
+          "score": 2
+        },
+        {
+          "name": "Discover Gas",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Treasure Chest",
+      "acronym": "TC",
+      "image": "10.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-treasure-chest-of-galaxies/",
+      "links": [
+        {
+          "id": 2
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 11
+        },
+        {
+          "id": 12
+        },
+        {
+          "id": 13
+        },
+        {
+          "id": 93
+        }
+      ],
+      "body": [
+        "You arrive among a large cluster of galaxies. Floating around you are many homeless asteroids and planets, rich in resources fit for refueling your ship."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Habitable Planet 1",
+          "score": 10
+        },
+        {
+          "name": "Refuel",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Cosmic Arc",
+      "acronym": "CA",
+      "image": "11.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-spots-a-green-cosmic-arc/",
+      "links": [
+        {
+          "id": 8
+        },
+        {
+          "id": 10
+        }
+      ],
+      "body": [
+        "You arrive at cosmic arc."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Galaxy Formation",
+          "score": 10
+        },
+        {
+          "name": "Discover Minor Colour",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Cluster Cornucopia",
+      "acronym": "CC",
+      "image": "12.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-galaxy-cluster-cornucopia",
+      "links": [
+        {
+          "id": 1
+        },
+        {
+          "id": 10
+        },
+        {
+          "id": 14
+        },
+        {
+          "id": 92
+        }
+      ],
+      "body": [
+        "You arrive in the centre of what can only be described as a cluster of clusters. Among them your ship sensors pick up what seems to be a planet incredibly similar to Earth."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Discover Habitable Planet 3",
+          "score": 50
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Homeless Stars",
+      "acronym": "HS",
+      "image": "13.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-captures-cluster-of-galaxies-and-homeless-stars/",
+      "links": [
+        {
+          "id": 5
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 10
+        },
+        {
+          "id": 12
+        }
+      ],
+      "body": [
+        "You arrive among a group of homeless stars. You begin to feel depressed as this reminds you of suffering that must have permeated throughout Earth"
+      ],
+      "arrivalEvents": [
+        {
+          "name": "AI Nihilistic",
+          "score": 15,
+          "attributes": "Whenever you continue your journey, 10% chance to give up and self destruct."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Galaxy in Disguise",
+      "acronym": "GD",
+      "image": "14.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-catches-a-spiral-galaxy-in-disguise",
+      "links": [
+        {
+          "id": 2
+        }
+      ],
+      "body": [
+        "A galaxy appears in front of you."
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Stealth 100",
+          "score": 40
+        }
+      ]
+    },
+    {
+      "id": "92",
+      "title": "Distant Past",
+      "acronym": "DP",
+      "image": "x2.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-probes-the-distant-past",
+      "links": [
+        {
+          "id": 92
+        }
+      ],
+      "body": [
+        "You continue your journey."
+      ]
+    },
+    {
+      "id": "93",
+      "type": "Death",
+      "title": "Irregular Supernova",
+      "acronym": "IS",
+      "image": "x3.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubble-observes-an-irregular-galaxy-with-a-peculiar-supernova",
+      "body": [
+        "Your ship overheats as you travel into the path of a dying star. GAME OVER. (You overheated)"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Enigmatic Cloud",
+      "acronym": "EC",
+      "image": "6.jpg",
+      "originalURL": "https://www.nasa.gov/image-feature/goddard/2018/hubbles-lucky-observation-of-an-enigmatic-cloud/",
+      "body": [
+        "As you come across a beautiful cloud among sparkling stars, you feel incredibly lucky, and all your troubles seem to melt away"
+      ],
+      "links": [
+        {
+          "id": 91
+        },
+        {
+          "id": 8
+        },
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        },
+        {
+          "id": 2
+        }
+      ],
+      "arrivalEvents": [
+        {
+          "name": "Remove Instant Death",
+          "score": 5
+        }
+      ]
+    }
+  ]
 }
