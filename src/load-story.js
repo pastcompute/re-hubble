@@ -71,7 +71,25 @@ function parseMap(json, titleInner) {
   `;
 
   const beforeEverything = document.createElement('beforeEveryThing');
-  beforeEverything.innerHTML = `console.log(11); $('body').css('background-image', 'url(assets/images/main0.jpg)');`;
+  beforeEverything.innerHTML = `
+    console.log(11);
+    $('body').css('background-image', 'url(assets/images/main0.jpg)');
+    const bs = document.getElementById('host').getElementsByTagName('button');
+    for (const b of bs) {
+      console.log('Add event to ', b);
+      b.addEventListener('click', (event) => {
+          console.log(event);
+          try {
+            var thing = event.srcElement.getElementsByTagName('a');
+            if (thing && thing[0]) {
+              thing[0].click();
+            }
+          } catch (x) {
+            console.error(x);
+          }
+        }, true);
+    }
+`;
 
   const afterEveryPageTurn = document.createElement('afterEveryPageTurn');
   afterEveryPageTurn.innerHTML = `
@@ -84,7 +102,9 @@ function parseMap(json, titleInner) {
           console.log(event);
           try {
             var thing = event.srcElement.getElementsByTagName('a');
-            if (thing && thing[0]) thing[0].click();
+            if (thing && thing[0]) {
+              thing[0].click();
+            }
           } catch (x) {
             console.error(x);
           }
