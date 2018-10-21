@@ -80,11 +80,16 @@ function parseMap(json, titleInner) {
     const bs = document.getElementById('host').getElementsByTagName('button');
     for (const b of bs) {
       console.log('Add event to ', b);
-      b.addEventListener('click', (event) => { console.log(event); event.srcElement.getElementsByTagName('a')[0].click(); }, true);
+      b.addEventListener('click', (event) => {
+          console.log(event);
+          try {
+            var thing = event.srcElement.getElementsByTagName('a');
+            if (thing && thing[0]) thing[0].click();
+          } catch (x) {
+            console.error(x);
+          }
+        }, true);
     }
-
-
-
 `;
 
   const nodes = json.nodes;
