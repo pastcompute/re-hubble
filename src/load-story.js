@@ -70,6 +70,7 @@ function parseMap(json, titleInner) {
     story.cloakJustPutOn = false;
   `;
 
+  const xxx = 'originalTarget';
   const beforeEverything = document.createElement('beforeEveryThing');
   beforeEverything.innerHTML = `
     console.log(11);
@@ -80,7 +81,7 @@ function parseMap(json, titleInner) {
       b.addEventListener('click', (event) => {
           console.log(event);
           try {
-            var thing = event.srcElement ? event.srcElement.getElementsByTagName('a') : event.originalTarget.getElementsByTagName('a');
+            var thing = event.srcElement ? event.srcElement.getElementsByTagName('a') : event.${xxx}.getElementsByTagName('a');
             if (thing && thing[0]) {
               thing[0].click();
             }
@@ -101,7 +102,7 @@ function parseMap(json, titleInner) {
       b.addEventListener('click', (event) => {
           console.log(event);
           try {
-            var thing = event.srcElement ? event.srcElement.getElementsByTagName('a') : event.originalTarget.getElementsByTagName('a');
+            var thing = event.srcElement ? event.srcElement.getElementsByTagName('a') : event.${xxx}.getElementsByTagName('a');
             if (thing && thing[0]) {
               thing[0].click();
             }
