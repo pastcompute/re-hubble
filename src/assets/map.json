@@ -14,8 +14,8 @@
       "title": "Let the journey begin!",
       "body": [
         "You look to the instructions your human creators left for you; You must travel around the universe discovering its wonderous secrets and find a planet for the remaining humans frozen in your ship to inhabit",
-        "You have been left image filenames from the hubble telescope to navigate with. Good Luck.",
-        "Along the way: click a picture to go to the NASA Hubble page"
+        "You have been left image filenames from the hubble telescope to navigate with. Good Luck!<br/>",
+        "<i>Along the way: click a picture to go to the NASA Hubble page!</i>"
       ],
       "links": [
         {

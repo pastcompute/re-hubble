@@ -158,6 +158,24 @@ function parseMap(json, titleInner) {
     if (v.image) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
     }
+
+    if (v.arrivalEvents && v.arrivalEvents.length > 0) {
+      // discoveries...
+      for (const arr of v.arrivalEvents) {
+        if (arr.name.startsWith('Discover')) {
+          const n = arr.name.split(' ')[1];
+          const d = n + `(${arr.score})`;
+          txt += `{{ story.putInInventory('${n}'); }}`;
+
+
+          const obj = document.createElement('obj');
+          obj.setAttribute('id', n);
+          obj.setAttribute('inventoryName', d);
+          story.appendChild(obj);
+        }
+      }
+    }
+
     const el = genPage(v.id, txt, ...classes);
     // const bs = el.getElementsByTagName('button');
     // for (const b of bs) {
