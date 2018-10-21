@@ -131,7 +131,9 @@ function parseMap(json, titleInner) {
   let first;
   _.each(nodes, (v, k) => {
     console.log(`Node id=${v.id} type=${v.type} title=${v.title}`);
-    let txt = `<h2>${v.title}</h2><p>${v.body}</p>`
+    let body = v.body;
+    if (_.isArray(body)) body = body.join('<br>');
+    let txt = `<h2>${v.title}</h2><p>${body}</p>`
     if (v.type === 'intro') {
       story.appendChild(genPage('intro', txt));
       return;
