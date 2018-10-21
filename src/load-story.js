@@ -107,7 +107,7 @@ function parseMap(json, titleInner) {
         console.log(ix);
         if (ix) t2 += `<button type="button" class="btn btn-outline-warning primary achoice" role="button"><turn to="${link.id}">${ix.acronym}</turn> </button>`;
       }
-      if (t2.length > 0) txt += `<p>Destination? ${t2}</p>`
+      if (t2.length > 0) txt += `<p>What is your Destination? ${t2}</p>`
     }
     if (v.image) {
       txt += `<a target="_blank" href="${v.originalURL}"><img class="nebula" src="assets/images/${v.image}"></a>`;
